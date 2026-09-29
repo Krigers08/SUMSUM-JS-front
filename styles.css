@@ -1,0 +1,28 @@
+:root { font-family: Arial, sans-serif; color: #222; background: #f5f5f5; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app-shell { width: min(760px, calc(100% - 32px)); margin: 40px auto; }
+h1 { margin-bottom: 8px; font-size: 1.8rem; }
+h2 { margin-top: 0; }
+form, .weather-panel { padding: 20px; margin-top: 24px; border: 1px solid #ccc; background: white; }
+label { display: block; margin-bottom: 6px; font-weight: bold; }
+input { width: min(100%, 360px); padding: 9px; border: 1px solid #999; font: inherit; }
+button { padding: 9px 14px; border: 1px solid #333; background: #eee; cursor: pointer; font: inherit; }
+button:disabled { cursor: wait; opacity: .6; }
+#form-message { min-height: 1.2em; color: #a33; }
+#api-status { margin: 18px 0; color: #555; font-size: .9rem; }
+.status-dot { display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; background: #29834b; }
+#metrics { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.metric { min-width: 130px; padding: 10px; border: 1px solid #ddd; }
+.metric-label, .metric-value { margin: 0; }
+.metric-label { color: #666; font-size: .85rem; }
+.metric-value { margin-top: 5px; font-weight: bold; }
+#forecast-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.forecast-day { padding: 10px; border: 1px solid #ddd; }
+.forecast-day p { margin: 5px 0; }
+.forecast-icon { font-size: 1.3rem; }
+@media (max-width: 600px) {
+  .app-shell { margin: 24px auto; }
+  input { width: 100%; margin-bottom: 8px; }
+  #forecast-grid { grid-template-columns: 1fr 1fr; }
+}

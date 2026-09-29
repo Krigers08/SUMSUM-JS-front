@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A vanilla JavaScript weather API test client."
+    />
+    <title>Weather API Test Client</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <h1>Weather API Test Client</h1>
+      <p>
+        Vanilla JavaScript AJAX request to a Laravel API, which calls
+        Open-Meteo.
+      </p>
+
+      <form id="weather-form">
+        <label for="city">City</label>
+        <input
+          id="city"
+          name="city"
+          type="search"
+          placeholder="Lisbon"
+          required
+        />
+        <button type="submit" id="search-button">
+          <span>Send request</span>
+        </button>
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <p id="api-status"><span class="status-dot"></span> Laravel API ready</p>
+
+      <section
+        class="weather-panel"
+        id="weather-panel"
+        aria-live="polite"
+        aria-busy="false"
+      >
+        <div id="empty-state">
+          <h2>Response</h2>
+          <p>Submit a city to test the API request.</p>
+        </div>
+
+        <div id="weather-content" hidden>
+          <h2 id="location-name"></h2>
+          <p id="coordinates"></p>
+          <p>
+            <span id="weather-icon" aria-hidden="true"></span>
+            <strong id="temperature"></strong> <span id="condition"></span>
+          </p>
+          <div id="metrics"></div>
+          <p id="updated-at"></p>
+          <h3>Five-day forecast</h3>
+          <div id="forecast-grid"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
