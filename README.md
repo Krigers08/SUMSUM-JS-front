@@ -1,4 +1,4 @@
-# Skyline Weather
+# JS Weather
 
 A small vanilla JavaScript weather dashboard. The browser uses AJAX (`fetch`) to call a Laravel endpoint. Laravel keeps the Open-Meteo request on the server and returns a frontend-friendly response.
 
