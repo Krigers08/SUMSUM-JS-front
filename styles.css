@@ -4,12 +4,32 @@ body { margin: 0; }
 .app-shell { width: min(760px, calc(100% - 32px)); margin: 40px auto; }
 h1 { margin-bottom: 8px; font-size: 1.8rem; }
 h2 { margin-top: 0; }
-form, .weather-panel { padding: 20px; margin-top: 24px; border: 1px solid #ccc; background: white; }
+form, .weather-panel, .auth-panel, .favorites-panel { padding: 20px; margin-top: 24px; border: 1px solid #ccc; background: white; }
 label { display: block; margin-bottom: 6px; font-weight: bold; }
+.field-row { margin-bottom: 16px; }
 input { width: min(100%, 360px); padding: 9px; border: 1px solid #999; font: inherit; }
 button { padding: 9px 14px; border: 1px solid #333; background: #eee; cursor: pointer; font: inherit; }
 button:disabled { cursor: wait; opacity: .6; }
+[hidden] { display: none !important; }
+.account-heading, #account-session, .location-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.account-heading h2, .location-heading h2 { margin: 0; }
+.account-forms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 18px; }
+.account-form { min-width: 0; padding: 0; margin: 0; border: 0; background: transparent; }
+.account-form h3 { margin: 0 0 16px; }
+.auth-panel input { width: 100%; }
 #form-message { min-height: 1.2em; color: #a33; }
+.auth-message { min-height: 1.2em; margin-top: 12px; color: #555; }
+.auth-message.success { color: #1e7d4b; }
+.auth-message.error { color: #a33; }
+#favorites-message { min-height: 1.2em; color: #666; }
+.favorite-cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; padding: 0; margin: 0; list-style: none; }
+.favorite-cities li { display: flex; align-items: stretch; border: 1px solid #ccc; }
+.favorite-search-button { flex: 1; border: 0; background: transparent; text-align: left; }
+.favorite-search-button:hover { background: #f1f5f2; }
+.favorite-remove-button { border: 0; border-left: 1px solid #ccc; background: transparent; font-size: .85rem; }
+.favorite-remove-button:hover { background: #f8ecea; }
+#coordinates { margin-bottom: 0; }
+#favorite-city-button { flex: 0 0 auto; }
 #api-status { margin: 18px 0; color: #555; font-size: .9rem; }
 .status-dot { display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; background: #29834b; }
 #metrics { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
@@ -24,5 +44,8 @@ button:disabled { cursor: wait; opacity: .6; }
 @media (max-width: 600px) {
   .app-shell { margin: 24px auto; }
   input { width: 100%; margin-bottom: 8px; }
+  .account-forms { grid-template-columns: 1fr; gap: 24px; }
+  .location-heading { align-items: flex-start; }
+  #favorite-city-button { padding: 8px; }
   #forecast-grid { grid-template-columns: 1fr 1fr; }
 }

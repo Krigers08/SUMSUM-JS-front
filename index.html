@@ -19,6 +19,59 @@
         Open-Meteo.
       </p>
 
+      <section class="auth-panel" aria-labelledby="account-heading">
+        <div class="account-heading">
+          <h2 id="account-heading">Your account</h2>
+          <div id="account-session" hidden>
+            <span id="account-name"></span>
+            <button type="button" id="logout-button">Log out</button>
+          </div>
+        </div>
+
+        <div class="account-forms" id="account-forms">
+          <form id="register-form" class="account-form" novalidate>
+            <h3>Create account</h3>
+            <div class="field-row">
+              <label for="register-name">Name</label>
+              <input id="register-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field-row">
+              <label for="register-email">Email</label>
+              <input id="register-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field-row">
+              <label for="register-password">Password</label>
+              <input id="register-password" name="password" type="password" autocomplete="new-password" required />
+            </div>
+            <div class="field-row">
+              <label for="register-password-confirmation">Confirm password</label>
+              <input id="register-password-confirmation" name="password_confirmation" type="password" autocomplete="new-password" required />
+            </div>
+            <button type="submit" id="register-button">Register</button>
+          </form>
+
+          <form id="login-form" class="account-form" novalidate>
+            <h3>Sign in</h3>
+            <div class="field-row">
+              <label for="login-email">Email</label>
+              <input id="login-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field-row">
+              <label for="login-password">Password</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button type="submit" id="login-button">Sign in</button>
+          </form>
+        </div>
+        <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="favorites-panel" aria-labelledby="favorites-heading">
+        <h2 id="favorites-heading">Favorite cities</h2>
+        <p id="favorites-message" role="status" aria-live="polite">Sign in to save your cities.</p>
+        <ul id="favorite-cities" class="favorite-cities"></ul>
+      </section>
+
       <form id="weather-form">
         <label for="city">City</label>
         <input
@@ -48,8 +101,13 @@
         </div>
 
         <div id="weather-content" hidden>
-          <h2 id="location-name"></h2>
-          <p id="coordinates"></p>
+          <div class="location-heading">
+            <div>
+              <h2 id="location-name"></h2>
+              <p id="coordinates"></p>
+            </div>
+            <button type="button" id="favorite-city-button" aria-pressed="false" disabled>☆ Save city</button>
+          </div>
           <p>
             <span id="weather-icon" aria-hidden="true"></span>
             <strong id="temperature"></strong> <span id="condition"></span>
